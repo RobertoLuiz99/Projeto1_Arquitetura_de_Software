@@ -2,11 +2,11 @@ import * as fs from 'node:fs';
 
 export default class CidadesHTMLReporter {
   ler(caminho) {
-    this.cidades = fs.readFileSync(caminho, 'utf-8'); // Leia o arquivo como texto
+    this.cidades = fs.readFileSync(caminho, 'utf-8');
   }
 
   parse() {
-    this.cidades = JSON.parse(this.cidades); // Converta o texto JSON para objeto
+    this.cidades = JSON.parse(this.cidades);
   }
 
   reportar() {
@@ -25,7 +25,6 @@ export default class CidadesHTMLReporter {
           <ul>
     `;
 
-    // Adiciona cada cidade na lista com o estado fictício
     for (const cidade of this.cidades) {
       result += `     <li><span class="cidade">${cidade.Nome}</span> - AL</li>\n`;
     }
